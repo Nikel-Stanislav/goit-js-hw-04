@@ -7,11 +7,12 @@ function isEnoughCapacity(products, containerSize) {
   // Функція має повернути результат перевірки, чи помістяться всі товари в контейнер.
   // Тобто порахувати загальну кількість товарів в об’єкті products і повернути true, якщо вона менше або дорівнює containerSize,
   // і false, якщо ні.
-  //   for (const product of products) {
-  //       let sum = 0;
-  //       for (let i = 0; i <= product; i++) {
-  //       }
-  //   }
+  let sum = 0;
+  const productsArr = Object.values(products);
+  for (const product of productsArr) {
+    sum += product;
+  }
+  return sum <= containerSize;
 }
 
 console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8));
